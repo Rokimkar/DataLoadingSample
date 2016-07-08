@@ -6,4 +6,5 @@ target 'SampleDataLoading' do
   pod 'Alamofire', '~> 3.4'
   pod 'AlamofireObjectMapper', '~> 3.0'
   pod 'AlamofireImage', '~> 2.0'
+  pod 'Gloss', '~> 0.7'
 end

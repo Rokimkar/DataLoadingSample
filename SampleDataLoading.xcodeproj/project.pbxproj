@@ -19,8 +19,8 @@
 		A01809061D1AEE3E00B6D965 /* ContactsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01809051D1AEE3E00B6D965 /* ContactsTableView.swift */; };
 		A01809091D1C68C000B6D965 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01809071D1C68C000B6D965 /* TableViewCell.swift */; };
 		A018090A1D1C68C000B6D965 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01809081D1C68C000B6D965 /* TableViewCell.xib */; };
-		A01809551D24614000B6D965 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01809541D24614000B6D965 /* DataManager.swift */; };
 		A01809571D2475B600B6D965 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01809561D2475B600B6D965 /* Person.swift */; };
+		A044E88D1D2F98F30095AA9A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044E88C1D2F98F20095AA9A /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 		A01809051D1AEE3E00B6D965 /* ContactsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableView.swift; sourceTree = "<group>"; };
 		A01809071D1C68C000B6D965 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A01809081D1C68C000B6D965 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		A01809541D24614000B6D965 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../DataManager.swift; sourceTree = "<group>"; };
 		A01809561D2475B600B6D965 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A044E88C1D2F98F20095AA9A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +124,11 @@
 		A01808D41D1AEA5A00B6D965 /* SampleDataLoading */ = {
 			isa = PBXGroup;
 			children = (
+				A044E88C1D2F98F20095AA9A /* DataManager.swift */,
 				A01808D51D1AEA5A00B6D965 /* AppDelegate.swift */,
 				A01808D71D1AEA5A00B6D965 /* ViewController.swift */,
 				A01809051D1AEE3E00B6D965 /* ContactsTableView.swift */,
 				A01809071D1C68C000B6D965 /* TableViewCell.swift */,
-				A01809541D24614000B6D965 /* DataManager.swift */,
 				A01809561D2475B600B6D965 /* Person.swift */,
 				A01809081D1C68C000B6D965 /* TableViewCell.xib */,
 				A01808D91D1AEA5A00B6D965 /* Main.storyboard */,
@@ -174,12 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01808FA1D1AEA5B00B6D965 /* Build configuration list for PBXNativeTarget "SampleDataLoading" */;
 			buildPhases = (
-				8E6EBCE9439DB66D7492B890 /* Check Pods Manifest.lock */,
+				8E6EBCE9439DB66D7492B890 /* [CP] Check Pods Manifest.lock */,
 				A01808CF1D1AEA5A00B6D965 /* Frameworks */,
 				A01808CE1D1AEA5A00B6D965 /* Sources */,
 				A01808D01D1AEA5A00B6D965 /* Resources */,
-				A70553F4A96079D934695747 /* Embed Pods Frameworks */,
-				7E06EB5CF122C3615EAF4789 /* Copy Pods Resources */,
+				A70553F4A96079D934695747 /* [CP] Embed Pods Frameworks */,
+				7E06EB5CF122C3615EAF4789 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,14 +299,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7E06EB5CF122C3615EAF4789 /* Copy Pods Resources */ = {
+		7E06EB5CF122C3615EAF4789 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,14 +314,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleDataLoading/Pods-SampleDataLoading-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8E6EBCE9439DB66D7492B890 /* Check Pods Manifest.lock */ = {
+		8E6EBCE9439DB66D7492B890 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,14 +329,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A70553F4A96079D934695747 /* Embed Pods Frameworks */ = {
+		A70553F4A96079D934695747 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,8 +352,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01809571D2475B600B6D965 /* Person.swift in Sources */,
+				A044E88D1D2F98F30095AA9A /* DataManager.swift in Sources */,
 				A01809061D1AEE3E00B6D965 /* ContactsTableView.swift in Sources */,
-				A01809551D24614000B6D965 /* DataManager.swift in Sources */,
 				A01809091D1C68C000B6D965 /* TableViewCell.swift in Sources */,
 				A01808D81D1AEA5A00B6D965 /* ViewController.swift in Sources */,
 				A01808D61D1AEA5A00B6D965 /* AppDelegate.swift in Sources */,
