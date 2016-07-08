@@ -24,10 +24,14 @@ class TableViewCell: UITableViewCell {
     }
     
     func bindDataForObject(personData:Person){
-        self.userName.text = personData.firstName! + personData.lastName!
+        self.userName.text = personData.firstName!+" "+personData.lastName!
         let url = personData.profilePicture!
         self.fetchImage(url, forceFetch: true) { (image, error) in
-            self.displayPicture.image = image
+            if(error==nil){
+                self.displayPicture.image = image
+            }else{
+                self.displayPicture.image = UIImage(named:"displayPicture")
+            }
             self.displayPicture.layer.cornerRadius=CGRectGetHeight(self.displayPicture.bounds)/2
             self.displayPicture.clipsToBounds=true
         }

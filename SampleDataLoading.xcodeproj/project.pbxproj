@@ -21,6 +21,7 @@
 		A018090A1D1C68C000B6D965 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01809081D1C68C000B6D965 /* TableViewCell.xib */; };
 		A01809571D2475B600B6D965 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01809561D2475B600B6D965 /* Person.swift */; };
 		A044E88D1D2F98F30095AA9A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044E88C1D2F98F20095AA9A /* DataManager.swift */; };
+		A08DD7781D2FBDFA00C014E8 /* AllImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08DD7771D2FBDFA00C014E8 /* AllImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A01809081D1C68C000B6D965 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		A01809561D2475B600B6D965 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A044E88C1D2F98F20095AA9A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A08DD7771D2FBDFA00C014E8 /* AllImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AllImages.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				A01809081D1C68C000B6D965 /* TableViewCell.xib */,
 				A01808D91D1AEA5A00B6D965 /* Main.storyboard */,
 				A01808DC1D1AEA5B00B6D965 /* Assets.xcassets */,
+				A08DD7771D2FBDFA00C014E8 /* AllImages.xcassets */,
 				A01808DE1D1AEA5B00B6D965 /* LaunchScreen.storyboard */,
 				A01809031D1AED6900B6D965 /* ContactDirectory.plist */,
 				A01808E11D1AEA5B00B6D965 /* Info.plist */,
@@ -277,6 +280,7 @@
 				A01808E01D1AEA5B00B6D965 /* LaunchScreen.storyboard in Resources */,
 				A018090A1D1C68C000B6D965 /* TableViewCell.xib in Resources */,
 				A01809041D1AED6900B6D965 /* ContactDirectory.plist in Resources */,
+				A08DD7781D2FBDFA00C014E8 /* AllImages.xcassets in Resources */,
 				A01808DD1D1AEA5B00B6D965 /* Assets.xcassets in Resources */,
 				A01808DB1D1AEA5A00B6D965 /* Main.storyboard in Resources */,
 			);

@@ -16,18 +16,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFX-tU-T3n">
-                        <rect key="frame" x="60" y="-1" width="90" height="90"/>
+                        <rect key="frame" x="48" y="4" width="80" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="90" id="G2y-St-m1t"/>
-                            <constraint firstAttribute="width" constant="90" id="gD5-OS-6I7"/>
+                            <constraint firstAttribute="height" constant="80" id="G2y-St-m1t"/>
+                            <constraint firstAttribute="width" constant="80" id="gD5-OS-6I7"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-98-G2T">
-                        <rect key="frame" x="158" y="33" width="253" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-98-G2T">
+                        <rect key="frame" x="136" y="33" width="38" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Hk4-rg-4FJ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -36,7 +36,7 @@
                     <constraint firstItem="tFX-tU-T3n" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IP2-Gh-J9J"/>
                     <constraint firstItem="tFX-tU-T3n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-9" id="V7j-1J-3O1"/>
                     <constraint firstAttribute="bottomMargin" secondItem="tFX-tU-T3n" secondAttribute="bottom" constant="-9" id="ZoU-Tw-eMu"/>
-                    <constraint firstItem="tFX-tU-T3n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="52" id="kIp-Eh-fru"/>
+                    <constraint firstItem="tFX-tU-T3n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="40" id="kIp-Eh-fru"/>
                     <constraint firstItem="rCf-98-G2T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nkf-qo-JA4"/>
                     <constraint firstItem="rCf-98-G2T" firstAttribute="leading" secondItem="tFX-tU-T3n" secondAttribute="trailing" constant="8" id="oWK-Kq-PLF"/>
                 </constraints>
@@ -47,6 +47,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="displayPicture" destination="tFX-tU-T3n" id="1Da-fd-0LB"/>
                 <outlet property="userName" destination="rCf-98-G2T" id="wQR-hF-eei"/>
