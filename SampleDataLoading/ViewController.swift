@@ -16,13 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var dataArray : NSArray?
-        DataManager.sharedInstance.fetchContactListJSON("") { (data) in
-            
+        DataManager.sharedInstance.fetchContactListJSON("") { (decodedArray) in
+            let dataArray = decodedArray
+            self.contactTable = ContactsTableView(frame: self.view.frame,data: dataArray! as [AnyObject])
+            self.view.addSubview(self.contactTable)
+            print(dataArray)
         }
         if let path = NSBundle.mainBundle().pathForResource("ContactDirectory", ofType: "plist"){
-            dataArray = NSArray(contentsOfFile:path)
-            contactTable =  ContactsTableView(frame:self.view.frame,data: dataArray! as [AnyObject])
-            self.view.addSubview(contactTable)
+//            dataArray = NSArray(contentsOfFile:path)
+//            contactTable =  ContactsTableView(frame:self.view.frame,data: dataArray! as [AnyObject])
+//            self.view.addSubview(contactTable)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }

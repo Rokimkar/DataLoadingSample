@@ -16,32 +16,20 @@ class DataManager: NSObject {
     
     //fetching JSON object
     
-    func fetchContactListJSON(url:String,completion:(NSData?) -> Void){
+    func fetchContactListJSON(url:String,completion:([Dictionary<String,AnyObject>]?) -> Void){
         Alamofire.request(.GET, "http://gojek-contacts-app.herokuapp.com/contacts.json").validate().responseJSON{
             response in
             print(response.data)
-            //if(response.response)
+            let data = response.data
+            var decodedData:[Dictionary<String,AnyObject>]!
+            do{
+                decodedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! [Dictionary<String,AnyObject>]
+                completion(decodedData)
+                //print(decodedData)
+            }catch{
+                
+            }
         }
-//        let headers = [
-//            "content-type": "application/json",
-//            "cache-control": "no-cache"]
-//        let request = NSMutableURLRequest(URL : NSURL(string: "http://gojek-contacts-app.herokuapp.com/contacts.json")!, cachePolicy: .UseProtocolCachePolicy,timeoutInterval: 60.0)
-//        
-//        request.HTTPMethod="GET"
-//        request.allHTTPHeaderFields = headers
-//        
-//        let session = NSURLSession.sharedSession()
-//        let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-//            if (error != nil) {
-//                print(error)
-//            } else {
-//                let httpResponse = response as? NSHTTPURLResponse
-//                print(httpResponse)
-//                completion(data)
-//            }
-//        })
-//        
-//        dataTask.resume()
     }
 
     //fetching image
