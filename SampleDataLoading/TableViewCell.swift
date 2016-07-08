@@ -22,10 +22,10 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    func bindData(url:String,name:String) {
-        self.userName.text = name
-        
+    
+    func bindDataForObject(personData:Person){
+        self.userName.text = personData.firstName! + personData.lastName!
+        let url = personData.profilePicture!
         self.fetchImage(url, forceFetch: true) { (image, error) in
             self.displayPicture.image = image
             self.displayPicture.layer.cornerRadius=CGRectGetHeight(self.displayPicture.bounds)/2

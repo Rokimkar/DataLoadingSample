@@ -16,7 +16,7 @@ class DataManager: NSObject {
     
     //fetching JSON object
     
-    func fetchContactListJSON(url:String,completion:([Dictionary<String,AnyObject>]?) -> Void){
+    func fetchContactListJSON(url:String,completion:([Person]?) -> Void){
         Alamofire.request(.GET, "http://gojek-contacts-app.herokuapp.com/contacts.json").validate().responseJSON{
             response in
             print(response.data)
@@ -24,11 +24,17 @@ class DataManager: NSObject {
             var decodedData:[Dictionary<String,AnyObject>]!
             do{
                 decodedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! [Dictionary<String,AnyObject>]
-                completion(decodedData)
                 //print(decodedData)
             }catch{
                 
             }
+            var personListing : [Person]
+            personListing = [Person]()
+            for personDict in decodedData{
+                let person = Person(json : personDict)
+                personListing.append(person)
+            }
+            completion(personListing)
         }
     }
 

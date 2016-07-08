@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Gloss
 
-class Person: NSObject {
-    var firstName : String = ""
-    var lastName : String = ""
-    var phoneNumber : String = ""
-    var profilePicture : String = ""
-    var email : String = ""
-    var personId : String = ""
-    var isFavorite : Bool = false
-    var createdAt : String = ""
-    var updatedAt : String = ""
+class Person: Decodable {
+        var firstName : String?
+        var lastName : String?
+        var profilePicture : String?
+        var url : String?
+        var personId : String?
+        required init(json: JSON){
+            firstName = "first_name" <~~ json
+            lastName = "last_name" <~~ json
+            profilePicture = "profile_pic" <~~ json
+            url = "url" <~~ json
+    }
 }

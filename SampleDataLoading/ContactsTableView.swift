@@ -10,9 +10,9 @@ import UIKit
 
 class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     
-    var tableData = [AnyObject]()
+    var tableData = [Person]()
     
-    init(frame: CGRect,data:[AnyObject]) {
+    init(frame: CGRect,data:[Person]) {
         self.tableData = data
         super.init(frame: frame, style:.Plain)
         self.registerCell("TableViewCell")
@@ -51,12 +51,9 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let personData:Dictionary=self.tableData[indexPath.row] as! Dictionary<String,AnyObject>
-        let firstName = personData["first_name"] as! String
-        let lastname = personData["last_name"] as! String
         let currentCellDescriptor = getCellDescriptorForIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(currentCellDescriptor!, forIndexPath: indexPath) as! TableViewCell
-        cell.bindData(personData["profile_pic"] as! String,name:firstName+" "+lastname)
+        cell.bindDataForObject(self.tableData[indexPath.row])
         return cell
     }
     
