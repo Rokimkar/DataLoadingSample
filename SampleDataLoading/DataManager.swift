@@ -30,9 +30,11 @@ class DataManager: NSObject {
             }
             var personListing : [Person]
             personListing = [Person]()
-            for personDict in decodedData{
-                let person = Person(json : personDict)
-                personListing.append(person)
+            if (decodedData?.first) != nil{
+                for personDict in decodedData{
+                    let person = Person(json : personDict)
+                    personListing.append(person)
+                }
             }
             completion(personListing)
         }

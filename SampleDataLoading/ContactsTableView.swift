@@ -12,10 +12,13 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     
     var tableData = [Person]()
     
-    init(frame: CGRect,data:[Person]) {
-        self.tableData = data
+    init(frame: CGRect) {
         super.init(frame: frame, style:.Plain)
+        self.dataSource=self
+        self.delegate=self
+        self.backgroundColor = UIColor.whiteColor()
         self.registerCell("TableViewCell")
+        self.registerCell("LoaderCell")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,9 +29,6 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     
     func registerCell(identifier:String)  {
         self.registerNib(UINib(nibName: identifier, bundle:nil), forCellReuseIdentifier:identifier)
-        self.dataSource=self
-        self.delegate=self
-        self.backgroundColor = UIColor.grayColor()
     }
     
     //Mark :TableView Data Source
@@ -39,6 +39,9 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(tableData.count==0){
+            return 1;
+        }
         return tableData.count
     }
     
@@ -51,6 +54,11 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if(self.tableData.count==0){
+            let cell = tableView.dequeueReusableCellWithIdentifier("LoaderCell", forIndexPath: indexPath) as! LoaderCell
+            cell.loader.startAnimating()
+            return cell;
+        }
         let currentCellDescriptor = getCellDescriptorForIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(currentCellDescriptor!, forIndexPath: indexPath) as! TableViewCell
         cell.bindDataForObject(self.tableData[indexPath.row])

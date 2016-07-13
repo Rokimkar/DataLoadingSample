@@ -15,10 +15,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Contacts"
+        let frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        self.contactTable = ContactsTableView(frame: frame)
+        self.contactTable.tableData = [];
+        self.contactTable.reloadData()
         DataManager.sharedInstance.fetchContactListJSON("") { (personList) in
-            self.contactTable = ContactsTableView(frame: self.view.frame,data: personList! as [Person])
-            self.view.addSubview(self.contactTable)
+            self.contactTable.tableData = personList!
+            self.contactTable.reloadData()
         }
+        self.view.addSubview(self.contactTable)
 //        if let path = NSBundle.mainBundle().pathForResource("ContactDirectory", ofType: "plist"){
 //            dataArray = NSArray(contentsOfFile:path)
 //            contactTable =  ContactsTableView(frame:self.view.frame,data: dataArray! as [AnyObject])
@@ -29,7 +35,8 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        
+        let color = UIColor(red: 62/255, green: 80/255, blue: 180/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = color
     }
 
     override func didReceiveMemoryWarning() {
