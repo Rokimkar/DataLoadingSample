@@ -60,6 +60,7 @@ class DataManager: NSObject {
 
         }
     }
+    
     //fetching image
     
     func fetchImage(urlString:String, forceFetch:Bool, completion:(UIImage?, NSError?) -> Void){
