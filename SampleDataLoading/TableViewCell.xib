@@ -31,11 +31,23 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcT-8u-CGe">
+                        <rect key="frame" x="8" y="29" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="ghD-i1-dtb"/>
+                            <constraint firstAttribute="height" constant="30" id="i7H-GA-i3R"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <color key="textColor" red="0.88235294119999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="KcT-8u-CGe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CKn-Za-jug"/>
                     <constraint firstItem="tFX-tU-T3n" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IP2-Gh-J9J"/>
                     <constraint firstItem="tFX-tU-T3n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-9" id="V7j-1J-3O1"/>
                     <constraint firstAttribute="bottomMargin" secondItem="tFX-tU-T3n" secondAttribute="bottom" constant="-9" id="ZoU-Tw-eMu"/>
+                    <constraint firstItem="KcT-8u-CGe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eh8-4u-vcK"/>
                     <constraint firstItem="tFX-tU-T3n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="40" id="kIp-Eh-fru"/>
                     <constraint firstItem="rCf-98-G2T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nkf-qo-JA4"/>
                     <constraint firstItem="rCf-98-G2T" firstAttribute="leading" secondItem="tFX-tU-T3n" secondAttribute="trailing" constant="8" id="oWK-Kq-PLF"/>
@@ -50,6 +62,7 @@
             <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="displayPicture" destination="tFX-tU-T3n" id="1Da-fd-0LB"/>
+                <outlet property="title" destination="KcT-8u-CGe" id="ZZf-KC-1Gg"/>
                 <outlet property="userName" destination="rCf-98-G2T" id="wQR-hF-eei"/>
             </connections>
             <point key="canvasLocation" x="298.5" y="306.5"/>

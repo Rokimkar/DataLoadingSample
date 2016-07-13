@@ -36,7 +36,7 @@ class DataManager: NSObject {
                     personListing.append(person)
                 }
             }
-            completion(personListing)
+            completion(self.sortData(personListing))
         }
     }
     
@@ -77,5 +77,12 @@ class DataManager: NSObject {
                 }
         }
         
+    }
+    
+    //Sorting Data
+    
+    func sortData(dataArray:[Person]) -> [Person] {
+        let sortedArray=dataArray.sort{$0.firstName < $1.firstName}
+        return sortedArray
     }
 }

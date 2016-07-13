@@ -65,7 +65,16 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
         }
         let currentCellDescriptor = getCellDescriptorForIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(currentCellDescriptor!, forIndexPath: indexPath) as! TableViewCell
-        cell.bindDataForObject(self.tableData[indexPath.row])
+        var showcellTitle = false
+        if indexPath.row>0{
+            if (self.tableData[indexPath.row-1].firstName! as NSString).substringWithRange(NSRange(location: 0,length: 1)) != (self.tableData[indexPath.row].firstName! as NSString).substringWithRange(NSRange(location: 0,length: 1)){
+                showcellTitle = true
+            }
+        }
+        else if indexPath.row==0{
+            showcellTitle=true
+        }
+        cell.bindDataForObject(self.tableData[indexPath.row], showCellTitle: showcellTitle)
         return cell
     }
     

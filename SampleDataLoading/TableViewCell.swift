@@ -17,15 +17,21 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var displayPicture: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func bindDataForObject(personData:Person){
+    func bindDataForObject(personData:Person,showCellTitle:Bool){
+        self.title.hidden=true
         self.userName.text = personData.firstName!+" "+personData.lastName!
         let url = personData.profilePicture!
+        if showCellTitle==true{
+            self.title.hidden=false
+            self.title.text = (personData.firstName! as NSString).substringWithRange(NSRange(location: 0,length: 1))
+        }
         self.fetchImage(url, forceFetch: true) { (image, error) in
             if(error==nil){
                 self.displayPicture.image = image

@@ -20,5 +20,9 @@ class Person: Decodable {
             lastName = "last_name" <~~ json
             profilePicture = "profile_pic" <~~ json
             url = "url" <~~ json
+            
+            //Making first letter UPPERCASE useful while sorting.
+            
+            firstName!.replaceRange(firstName!.startIndex...firstName!.startIndex, with: String(firstName![firstName!.startIndex]).capitalizedString)
     }
 }
