@@ -24,6 +24,66 @@
             </objects>
             <point key="canvasLocation" x="679" y="204"/>
         </scene>
+        <!--Contact Detail-->
+        <scene sceneID="95R-eJ-uDl">
+            <objects>
+                <viewController storyboardIdentifier="ContactDetail" id="6ZJ-vu-oLX" customClass="ContactDetail" customModule="SampleDataLoading" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l72-t9-5wR"/>
+                        <viewControllerLayoutGuide type="bottom" id="pku-ZL-R9K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HBi-jP-dbb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zc8-Js-IFe">
+                                <rect key="frame" x="60" y="28" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7d2-PK-HOx"/>
+                                    <constraint firstAttribute="height" constant="200" id="91T-Eh-gg1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5X-Qu-Syh">
+                                <rect key="frame" x="40" y="282" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2ed-ct-x1f"/>
+                                    <constraint firstAttribute="width" constant="240" id="W53-7J-Jnc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVb-GN-KTb">
+                                <rect key="frame" x="40" y="315" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Gyq-4l-bii"/>
+                                    <constraint firstAttribute="width" constant="240" id="xPF-S3-n3p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QVb-GN-KTb" firstAttribute="top" secondItem="p5X-Qu-Syh" secondAttribute="bottom" constant="12" id="27X-Tk-Ern"/>
+                            <constraint firstItem="p5X-Qu-Syh" firstAttribute="centerX" secondItem="HBi-jP-dbb" secondAttribute="centerX" id="4w5-Ul-RDl"/>
+                            <constraint firstItem="QVb-GN-KTb" firstAttribute="centerX" secondItem="HBi-jP-dbb" secondAttribute="centerX" id="B8s-3f-IqH"/>
+                            <constraint firstItem="Zc8-Js-IFe" firstAttribute="centerX" secondItem="HBi-jP-dbb" secondAttribute="centerX" id="Grf-gq-qtO"/>
+                            <constraint firstItem="Zc8-Js-IFe" firstAttribute="top" secondItem="l72-t9-5wR" secondAttribute="bottom" constant="8" id="MB0-Em-l43"/>
+                            <constraint firstItem="p5X-Qu-Syh" firstAttribute="top" secondItem="Zc8-Js-IFe" secondAttribute="bottom" constant="54" id="U41-pl-ggH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactName" destination="p5X-Qu-Syh" id="CNY-tu-MRZ"/>
+                        <outlet property="contactNumber" destination="QVb-GN-KTb" id="KNY-2A-SBD"/>
+                        <outlet property="displayPicture" destination="Zc8-Js-IFe" id="Cvm-bw-obG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2W-ig-Lhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="201"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="drP-mk-GN1">
             <objects>

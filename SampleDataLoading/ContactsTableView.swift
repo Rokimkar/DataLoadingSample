@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol cellTapped {
+    func performActionOnCellTap(person:Person)
+}
+
 class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     
     var tableData = [Person]()
-    
+    var cellTapDelegate:cellTapped?
     init(frame: CGRect) {
         super.init(frame: frame, style:.Plain)
         self.dataSource=self
@@ -72,5 +76,7 @@ class ContactsTableView: UITableView,UITableViewDataSource,UITableViewDelegate {
     //Mark Table Delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        cellTapDelegate?.performActionOnCellTap(self.tableData[indexPath.row])
+        self.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

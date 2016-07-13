@@ -39,7 +39,27 @@ class DataManager: NSObject {
             completion(personListing)
         }
     }
+    
+    //fetching Person Detail
+    
+    func fetchPersonDetail(url:String,completion:(PersonDetail?) -> Void) {
+        Alamofire.request(.GET,url).validate().responseJSON{
+            response in
+            print(response.data)
+            let data = response.data
+            var decodedData:Dictionary<String,AnyObject>!
+            do{
+                decodedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! Dictionary<String,AnyObject>
+            }catch{
+                
+            }
+            if(decodedData?.first) != nil{
+                let personDetail = PersonDetail(json: decodedData)
+                completion(personDetail)
+            }
 
+        }
+    }
     //fetching image
     
     func fetchImage(urlString:String, forceFetch:Bool, completion:(UIImage?, NSError?) -> Void){

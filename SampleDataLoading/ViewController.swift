@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,cellTapped {
 
     var contactTable:ContactsTableView!
     
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         let frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
         self.contactTable = ContactsTableView(frame: frame)
         self.contactTable.tableData = [];
+        self.contactTable.cellTapDelegate=self;
         self.contactTable.reloadData()
         DataManager.sharedInstance.fetchContactListJSON("") { (personList) in
             self.contactTable.tableData = personList!
@@ -37,6 +38,15 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated);
         let color = UIColor(red: 62/255, green: 80/255, blue: 180/255, alpha: 1)
         self.navigationController?.navigationBar.barTintColor = color
+    }
+    
+    func performActionOnCellTap(person:Person){
+        DataManager.sharedInstance.fetchPersonDetail(person.url!) { (personDetail) in
+            let storyBoard = UIStoryboard(name: "Main",bundle: nil)
+            let contactDetailVC = storyBoard.instantiateViewControllerWithIdentifier("ContactDetail") as! ContactDetail
+            contactDetailVC.personDetail = personDetail!
+            self.navigationController?.pushViewController(contactDetailVC, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
